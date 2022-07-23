@@ -2,18 +2,19 @@ package ru.netology.web;
 
 import com.github.javafaker.Faker;
 import lombok.experimental.UtilityClass;
+
 import java.time.LocalDate;
 import java.util.Locale;
 import java.time.format.DateTimeFormatter;
-import org.junit.jupiter.api.BeforeEach;
 
 public class DataGenerator {
 
-    private Faker faker;
+    public static String meetingDate(int shift) {
+        return LocalDate.now().plusDays(shift).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
+    }
 
-    @BeforeEach
-    void setUpAll() {
-        faker = new Faker(new Locale("ru"));
+    public static String otherMeetingDate(int shift) {
+        return LocalDate.now().plusDays(shift).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
     }
 
     @UtilityClass
@@ -24,8 +25,7 @@ public class DataGenerator {
                     faker.address().cityName(),
                     faker.name().fullName(),
                     faker.phoneNumber().phoneNumber());
+        }
 
     }
-    }
-
 }
