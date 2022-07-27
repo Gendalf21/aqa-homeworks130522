@@ -18,7 +18,7 @@ public class CardDeliveryChangeDate {
 
         RegistrationInfo info = DataGenerator.Registration.generateInfo("ru");
         String meetingDate = DataGenerator.meetingDate(3);
-        String otherMeetingDate = DataGenerator.otherMeetingDate(7);
+        String otherMeetingDate = DataGenerator.meetingDate(7);
 
         $("[placeholder=Город]").setValue(info.getCity());
         $("[data-test-id=date] input").doubleClick().sendKeys(Keys.DELETE);

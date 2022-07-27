@@ -13,10 +13,6 @@ public class DataGenerator {
         return LocalDate.now().plusDays(shift).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
     }
 
-    public static String otherMeetingDate(int shift) {
-        return LocalDate.now().plusDays(shift).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
-    }
-
     @UtilityClass
     public static class Registration {
         public static RegistrationInfo generateInfo(String locale) {
